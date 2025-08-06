@@ -5,14 +5,32 @@
 
 class PortfolioApp {
     constructor() {
+        this.isMobile = this.detectMobile();
         this.init();
     }
     
     init() {
+        // Add mobile class to body for CSS targeting
+        if (this.isMobile) {
+            document.body.classList.add('mobile-device');
+        }
+        
         this.initializeParticles();
         this.setupSmoothScrolling();
         this.setupAnimationObserver();
         this.setupButtonInteractions();
+    }
+    
+    /**
+     * Detect if device is mobile
+     */
+    detectMobile() {
+        // Check for touch capability and screen size
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        const isSmallScreen = window.innerWidth <= 768;
+        const isMobileUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        return isTouchDevice && (isSmallScreen || isMobileUserAgent);
     }
     
     /**
@@ -41,7 +59,7 @@ class PortfolioApp {
      * Initialize particles.js background with custom configuration
      */
     initializeParticles() {
-        // Skip particles on low-end devices
+        // Skip particles on low-end devices only (keep on mobile)
         if (this.isLowEndDevice()) {
             console.log('Skipping particles.js initialization for low-end device');
             // Add a simple gradient background instead
@@ -178,7 +196,7 @@ class PortfolioApp {
      * Setup smooth scrolling for navigation links
      */
     setupSmoothScrolling() {
-        // Add smooth scrolling to any future navigation links
+        // Add smooth scrolling to any future navigation links (enabled on all devices)
         document.addEventListener('click', (e) => {
             if (e.target.matches('a[href^="#"]')) {
                 e.preventDefault();
@@ -197,6 +215,16 @@ class PortfolioApp {
      * Setup simple scroll-based visibility for projects section
      */
     setupAnimationObserver() {
+        // Skip animation observer on mobile
+        if (this.isMobile) {
+            const projectsSection = document.getElementById('projects');
+            if (projectsSection) {
+                // Immediately add the visible class without animation
+                projectsSection.classList.add('projects-visible');
+            }
+            return;
+        }
+        
         // Simple check to trigger animations when projects section is in view
         const projectsSection = document.getElementById('projects');
         if (!projectsSection) return;
@@ -224,7 +252,7 @@ class PortfolioApp {
      * Setup button interactions and effects
      */
     setupButtonInteractions() {
-        // Add ripple effect to buttons
+        // Add ripple effect to buttons (enabled on all devices)
         document.addEventListener('click', (e) => {
             if (e.target.matches('button, .btn')) {
                 this.createRippleEffect(e);

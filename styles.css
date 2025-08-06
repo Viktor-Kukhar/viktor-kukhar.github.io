@@ -717,4 +717,57 @@ body.loaded {
 body:not(.loaded) {
     opacity: 0;
     transition: opacity 0.3s ease;
+}
+
+/* Mobile Animation Disabling - Selective */
+body.mobile-device {
+    /* Remove specific hero animations */
+    .animate-fade-in,
+    .animate-slide-up {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    /* Disable scroll arrow bounce */
+    .scroll-arrow-link {
+        animation: none !important;
+    }
+    
+    /* Disable project card animations */
+    .project-card {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: opacity 0.01ms !important, transform 0.01ms !important;
+    }
+    
+    .projects-visible .project-card {
+        transition-delay: 0s !important;
+    }
+    
+    /* Disable hover transform effects on mobile (but keep other hover effects) */
+    .social-link:hover,
+    .project-card:hover,
+    .project-link:hover,
+    .dashboard-link:hover,
+    .scroll-arrow-link:hover {
+        transform: none !important;
+    }
+    
+    /* Make social icons colored by default on mobile (like desktop hover state) */
+    .social-link {
+        color: #60a5fa !important; /* Default blue color like hover */
+    }
+    
+    .social-link.github {
+        color: #ffffff !important; /* White for GitHub */
+    }
+    
+    .social-link.email {
+        color: #f87171 !important; /* Red for email */
+    }
+    
+    .social-link.twitter {
+        color: #60a5fa !important; /* Blue for Twitter */
+    }
 } 
