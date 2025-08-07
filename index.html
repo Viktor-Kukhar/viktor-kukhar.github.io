@@ -10,6 +10,8 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="manifest" href="images/site.webmanifest">
     <meta name="theme-color" content="#111827">
+    <!-- Preload LCP image for better performance -->
+    <link rel="preload" as="image" href="images/my-photo.webp" fetchpriority="high">
     <meta name="description" content="Viktor Kukhar - Aspiring Data Analyst. Portfolio showcasing SQL, Tableau, and Excel projects with data analysis expertise.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -33,7 +35,7 @@
                                 <img 
                                     src="images/my-photo.webp" 
                                     alt="Viktor Kukhar - Profile Photo" 
-                                    loading="lazy"
+                                    fetchpriority="high"
                                 >
                             </div>
                         </div>
@@ -76,16 +78,16 @@
                                 <p class="social-title">Connect with me:</p>
                                 <div class="social-links">
                                     <a href="https://www.linkedin.com/in/kukhar-viktor/" target="_blank" rel="noopener noreferrer" 
-                                       class="social-link">
-                                        <i class="fab fa-linkedin-in"></i>
+                                       class="social-link" aria-label="Visit Viktor Kukhar's LinkedIn profile">
+                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                     </a>
                                     <a href="https://github.com/Viktor-Kukhar" target="_blank" rel="noopener noreferrer"
-                                       class="social-link github">
-                                        <i class="fab fa-github"></i>
+                                       class="social-link github" aria-label="Visit Viktor Kukhar's GitHub profile">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
                                     </a>
                                     <a href="mailto:viktor.kukhar1708@gmail.com" 
-                                       class="social-link email">
-                                        <i class="far fa-envelope"></i>
+                                       class="social-link email" aria-label="Send email to Viktor Kukhar">
+                                        <i class="far fa-envelope" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
