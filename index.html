@@ -10,31 +10,28 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="manifest" href="images/site.webmanifest">
     <meta name="theme-color" content="#111827">
+    <!-- Preconnects for faster font/icon loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <!-- Preload LCP image for better performance -->
     <link rel="preload" as="image" href="images/my-photo.webp" fetchpriority="high">
     <meta name="description" content="Viktor Kukhar - Aspiring Data Analyst. Portfolio showcasing SQL, Tableau, and Excel projects with data analysis expertise.">
+    <!-- Open Graph / Twitter Cards -->
+    <meta property="og:title" content="Viktor Kukhar | Data Analyst Portfolio">
+    <meta property="og:description" content="Portfolio showcasing SQL, Tableau, and Excel projects with data analysis expertise.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/my-photo.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Viktor Kukhar | Data Analyst Portfolio">
+    <meta name="twitter:description" content="Portfolio showcasing SQL, Tableau, and Excel projects with data analysis expertise.">
+    <meta name="twitter:image" content="images/my-photo.webp">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Font display optimization for better FCP -->
-    <style>
-        /* Override Font Awesome font-display for better performance */
-        @font-face {
-            font-family: 'Font Awesome 6 Free';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2'),
-                 url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2') format('woff2');
-            font-display: swap;
-            font-weight: 400 900;
-        }
-        @font-face {
-            font-family: 'Font Awesome 6 Brands';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2') format('woff2');
-            font-display: swap;
-            font-weight: 400;
-        }
-    </style>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#projects" class="skip-link">Skip to content</a>
     <!-- Particles Background -->
     <div id="particles-js"></div>
     <!-- Main Content -->
@@ -237,7 +234,7 @@
     </main>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="main.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="main.js"></script>
 </body>
 </html>

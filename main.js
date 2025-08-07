@@ -16,7 +16,6 @@ class PortfolioApp {
         }
         
         this.initializeParticles();
-        this.setupSmoothScrolling();
         this.setupAnimationObserver();
     }
     
@@ -36,21 +35,9 @@ class PortfolioApp {
      * Check device performance capabilities
      */
     isLowEndDevice() {
-        // Check for reduced motion preference
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            return true;
-        }
-        
-        // Check device memory (if available)
-        if (navigator.deviceMemory && navigator.deviceMemory < 4) {
-            return true;
-        }
-        
-        // Check hardware concurrency (CPU cores)
-        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
-            return true;
-        }
-        
+        // Retained for future use; not used to disable particles anymore
+        if (navigator.deviceMemory && navigator.deviceMemory < 2) return true;
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 2) return true;
         return false;
     }
 
@@ -58,17 +45,15 @@ class PortfolioApp {
      * Initialize particles.js background with custom configuration
      */
     initializeParticles() {
-        // Skip particles on low-end devices only (keep on mobile)
-        if (this.isLowEndDevice()) {
-            console.log('Skipping particles.js initialization for low-end device');
-            // Add a simple gradient background instead
+        // Respect reduced motion preference; otherwise always enable particles
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             const particlesEl = document.getElementById('particles-js');
             if (particlesEl) {
                 particlesEl.style.background = 'linear-gradient(135deg, #111827 0%, #1f2937 100%)';
             }
             return;
         }
-        
+
         // Add a small delay to ensure particles.js is fully loaded
         setTimeout(() => {
             if (typeof particlesJS !== 'undefined') {
@@ -87,18 +72,8 @@ class PortfolioApp {
                     },
                     "shape": {
                         "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        },
-                        "polygon": {
-                            "nb_sides": 5
-                        },
-                        "image": {
-                            "src": "img/github.svg",
-                            "width": 100,
-                            "height": 100
-                        }
+                        "stroke": { "width": 0, "color": "#000000" },
+                        "polygon": { "nb_sides": 5 }
                     },
                     "opacity": {
                         "value": 0.5,
@@ -194,21 +169,7 @@ class PortfolioApp {
     /**
      * Setup smooth scrolling for navigation links
      */
-    setupSmoothScrolling() {
-        // Add smooth scrolling to any future navigation links (enabled on all devices)
-        document.addEventListener('click', (e) => {
-            if (e.target.matches('a[href^="#"]')) {
-                e.preventDefault();
-                const target = document.querySelector(e.target.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-    }
+    // Removed custom smooth scrolling; CSS handles this via scroll-behavior
     
     /**
      * Setup simple scroll-based visibility for projects section
@@ -257,7 +218,4 @@ document.addEventListener('DOMContentLoaded', () => {
     new PortfolioApp();
 });
 
-// Add loading state management
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
+// Removed JS-gated body visibility for reliability with JS disabled
