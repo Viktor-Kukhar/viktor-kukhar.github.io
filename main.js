@@ -18,7 +18,6 @@ class PortfolioApp {
         this.initializeParticles();
         this.setupSmoothScrolling();
         this.setupAnimationObserver();
-        this.setupButtonInteractions();
     }
     
     /**
@@ -248,76 +247,7 @@ class PortfolioApp {
         observer.observe(projectsSection);
     }
     
-    /**
-     * Setup button interactions and effects
-     */
-    setupButtonInteractions() {
-        // Add ripple effect to buttons (enabled on all devices)
-        document.addEventListener('click', (e) => {
-            if (e.target.matches('button, .btn')) {
-                this.createRippleEffect(e);
-            }
-        });
-        
-        // Handle CTA button clicks
-        this.setupCTAButtons();
-    }
-    
-    /**
-     * Create ripple effect on button click
-     */
-    createRippleEffect(event) {
-        const button = event.target;
-        const rect = button.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = event.clientX - rect.left - size / 2;
-        const y = event.clientY - rect.top - size / 2;
-        
-        const ripple = document.createElement('span');
-        ripple.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            left: ${x}px;
-            top: ${y}px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            pointer-events: none;
-        `;
-        
-        // Add ripple animation CSS if not already added
-        if (!document.querySelector('#ripple-styles')) {
-            const style = document.createElement('style');
-            style.id = 'ripple-styles';
-            style.textContent = `
-                @keyframes ripple {
-                    to {
-                        transform: scale(4);
-                        opacity: 0;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-        
-        button.style.position = 'relative';
-        button.style.overflow = 'hidden';
-        button.appendChild(ripple);
-        
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    }
-    
-    /**
-     * Setup CTA button functionality
-     */
-    setupCTAButtons() {
-        // Future: Add CTA button functionality when needed
-        // Currently no CTA buttons in the HTML
-    }
+
 }
 
 

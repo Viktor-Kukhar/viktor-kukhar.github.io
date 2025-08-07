@@ -141,11 +141,6 @@ main {
     flex-shrink: 0;
     position: relative;
     z-index: 15;
-    pointer-events: none;
-}
-
-.profile-image {
-    pointer-events: auto;
 }
 
 .profile-image-wrapper {
@@ -178,7 +173,6 @@ main {
     text-align: center;
     position: relative;
     z-index: 15;
-    pointer-events: none;
 }
 
 /* Allow pointer events only on text and interactive elements */
@@ -261,18 +255,23 @@ main {
     }
 }
 
-.skill-pill {
+/* Common pill styling */
+.skill-pill,
+.tech-pill {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem; /* gap-2 */
-    padding: 0.5rem 1rem; /* py-2 px-4 */
-    background: linear-gradient(135deg, #1f2937 0%, #374151 100%); /* gradient from gray-800 to gray-700 */
-    color: #f9fafb; /* text-gray-100 */
-    border-radius: 9999px; /* rounded-full */
-    font-size: 0.875rem; /* text-sm */
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    border-radius: 9999px;
     font-weight: 500;
-    border: 1px solid #4b5563; /* border-gray-600 */
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06); /* shadow-sm */
+    border: 1px solid #4b5563;
+}
+
+.skill-pill {
+    padding: 0.5rem 1rem;
+    color: #f9fafb;
+    font-size: 0.875rem;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
 }
 
 .skill-pill i {
@@ -339,10 +338,6 @@ main {
 
 .social-link.email:hover {
     color: #f87171; /* hover:text-red-400 */
-}
-
-.social-link.twitter:hover {
-    color: #60a5fa; /* hover:text-blue-400 */
 }
 
 /* Scroll Arrow */
@@ -506,8 +501,6 @@ main {
     object-fit: cover;
 }
 
-
-
 .project-content {
     padding: 1.25rem;
     flex: 1;
@@ -539,15 +532,9 @@ main {
 }
 
 .tech-pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.25rem 0.75rem; /* py-1 px-3 */
-    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-    color: #60a5fa; /* text-blue-400 */
-    border-radius: 9999px; /* rounded-full */
-    font-size: 0.75rem; /* text-xs */
-    font-weight: 500;
-    border: 1px solid #4b5563; /* border-gray-600 */
+    padding: 0.25rem 0.75rem;
+    color: #60a5fa;
+    font-size: 0.75rem;
 }
 
 .project-link {
