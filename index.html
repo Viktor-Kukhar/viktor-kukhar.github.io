@@ -1,240 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viktor Kukhar | Data Analyst Portfolio</title>
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="manifest" href="images/site.webmanifest">
-    <meta name="theme-color" content="#111827">
-    <!-- Preconnects for faster font/icon loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <!-- Preload LCP image for better performance -->
-    <link rel="preload" as="image" href="images/my-photo.webp" fetchpriority="high">
-    <meta name="description" content="Viktor Kukhar - Aspiring Data Analyst. Portfolio showcasing SQL, Tableau, and Excel projects with data analysis expertise.">
-    <!-- Open Graph / Twitter Cards -->
-    <meta property="og:title" content="Viktor Kukhar | Data Analyst Portfolio">
-    <meta property="og:description" content="Portfolio showcasing SQL, Tableau, and Excel projects with data analysis expertise.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/my-photo.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Viktor Kukhar | Data Analyst Portfolio">
-    <meta name="twitter:description" content="Portfolio showcasing SQL, Tableau, and Excel projects with data analysis expertise.">
-    <meta name="twitter:image" content="images/my-photo.webp">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Viktor Kukhar | Data Analyst Portfolio</title>
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="manifest" href="images/site.webmanifest" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Viktor Kukhar - Data Analyst portfolio featuring live Tableau dashboards, SQL, and analysis work." />
+  <meta property="og:title" content="Viktor Kukhar | Data Analyst Portfolio" />
+  <meta property="og:description" content="Live Tableau dashboards, SQL projects, and analytics portfolio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/my-photo.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Viktor Kukhar | Data Analyst Portfolio" />
+  <meta name="twitter:description" content="Live Tableau dashboards, SQL projects, and analytics portfolio." />
+  <meta name="twitter:image" content="images/my-photo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS (CDN) with a subtle accent color -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#4f46e5',
+          },
+          boxShadow: {
+            subtle: '0 1px 2px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.03)'
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-    <a href="#projects" class="skip-link">Skip to content</a>
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-layout">
-                    
-                    <!-- Profile Image -->
-                    <div class="profile-image-container animate-fade-in">
-                        <div class="profile-image-wrapper">
-                            <div class="profile-image profile-shadow">
-                                <img 
-                                    src="images/my-photo.webp" 
-                                    alt="Viktor Kukhar - Profile Photo" 
-                                    fetchpriority="high"
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Content -->
-                    <div class="content-section animate-slide-up">
-                        <div class="content-spacing">
-                            <!-- Professional Introduction -->
-                            <div class="intro-section">
-                                <h1 class="name-title">
-                                    Viktor Kukhar
-                                </h1>
-                                <h2 class="job-title">
-                                    Aspiring Data Analyst
-                                </h2>
-                                <p class="description">
-                                    Second-year student passionate about tech and business. Seeking to apply my skills and knowledge in SQL, Tableau, Excel and Database Design. I am calm, pragmatic, dedicated and quality focused individual. 
-                                </p>
-                                
-                                <!-- Skills -->
-                                <div class="skills-container">
-                                    <span class="skill-pill">
-                                        <i class="fas fa-database"></i>
-                                        SQL
-                                    </span>
-                                    <span class="skill-pill">
-                                        <i class="fas fa-chart-line"></i>
-                                        Tableau
-                                    </span>
-                                    <span class="skill-pill">
-                                        <i class="fas fa-table"></i>
-                                        Excel
-                                    </span>
-                                </div>
-                            </div>
-                            
-                            <!-- Social Links -->
-                            <div class="social-section">
-                                <p class="social-title">Connect with me:</p>
-                                <div class="social-links">
-                                    <a href="https://www.linkedin.com/in/kukhar-viktor/" target="_blank" rel="noopener noreferrer" 
-                                       class="social-link" aria-label="Visit Viktor Kukhar's LinkedIn profile">
-                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="https://github.com/Viktor-Kukhar" target="_blank" rel="noopener noreferrer"
-                                       class="social-link github" aria-label="Visit Viktor Kukhar's GitHub profile">
-                                        <i class="fab fa-github" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="mailto:viktor.kukhar1708@gmail.com" 
-                                       class="social-link email" aria-label="Send email to Viktor Kukhar">
-                                        <i class="far fa-envelope" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<body class="bg-[radial-gradient(ellipse_at_top,rgba(2,6,23,0.04),transparent_60%)] text-slate-800 selection:bg-accent/10 selection:text-accent">
+  <a href="#projects" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white focus:text-slate-900 focus:px-3 focus:py-2 focus:rounded-md focus:shadow">Skip to content</a>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative">
+      <div class="mx-auto max-w-6xl px-6 pt-16 pb-8 md:pt-24">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+          <!-- Photo on the left -->
+          <div class="flex-shrink-0 self-center">
+            <div class="relative h-44 w-44 overflow-hidden rounded-full ring-1 ring-slate-200 md:h-64 md:w-64">
+              <img src="images/my-photo.webp" alt="Portrait of Viktor Kukhar" class="h-full w-full object-cover" fetchpriority="high" />
             </div>
-            
-            <!-- Scroll Arrow -->
-            <nav class="scroll-arrow" aria-label="Navigate to projects">
-                <a href="#projects" class="scroll-arrow-link" aria-label="Scroll to projects section">
-                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </a>
-            </nav>
-        </section>
+          </div>
+          
+          <!-- Description and icons on the right -->
+          <div class="w-full md:w-[28rem] space-y-4 text-center md:text-left">
+            <h1 class="text-3xl font-semibold tracking-tight text-slate-900 md:text-5xl">Viktor Kukhar</h1>
+            <p class="text-lg font-medium text-slate-600">Aspiring Data Analyst</p>
+            <p class="text-slate-600 max-w-2xl">Second-year student passionate about tech and business. Seeking to apply my skills and knowledge in SQL, Tableau, Excel and Database Design. I am calm, pragmatic, dedicated and quality focused individual.</p>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
-            <div class="projects-container">
-                <h2 class="section-title">My Projects</h2>
-                <div class="projects-grid">
-                    <!-- Project Card 1 -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/ai-impact.png" alt="AI Impact Analysis Dashboard" loading="lazy">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">AI Impact Analysis on Digital Media</h3>
-                            <p class="project-description">A SQL-based analysis of AI adoption, job loss, and content volume trends across industries and countries (2020-2025) to examine the impact of artificial intelligence on digital media landscape and workforce dynamics.</p>
-                            <div class="project-tech">
-                                <span class="tech-pill">MySQL</span>
-                                <span class="tech-pill">Tableau</span>
-                                <span class="tech-pill">EDA</span>
-                            </div>
-                            <div class="project-buttons">
-                                <a href="https://github.com/Viktor-Kukhar/ai-impact-analysis" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    View on GitHub
-                                </a>
-                                <a href="https://public.tableau.com/app/profile/viktor.kukhar/viz/AIImpactAnalysis/Dashboard" target="_blank" rel="noopener noreferrer" class="project-link dashboard-link">
-                                    <i class="fas fa-chart-bar"></i>
-                                    View Dashboard
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 2 -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/cybersecurity.png" alt="Cybersecurity Data Analysis" loading="lazy">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Cybersecurity Threats Analysis</h3>
-                            <p class="project-description">A SQL-based analysis of a global cybersecurity dataset (2015–2024) to uncover insights into attack trends, financial losses, and threat actor behaviors with recommendations for security professionals.</p>
-                            <div class="project-tech">
-                                <span class="tech-pill">MySQL</span>
-                                <span class="tech-pill">Tableau</span>
-                                <span class="tech-pill">EDA</span>
-                            </div>
-                            <div class="project-buttons">
-                                <a href="https://github.com/Viktor-Kukhar/cybersecurity-threats-analysis" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    View on GitHub
-                                </a>
-                                <a href="https://public.tableau.com/app/profile/viktor.kukhar/viz/Cybersecurity_17538803089120/Dashboard" target="_blank" rel="noopener noreferrer" class="project-link dashboard-link">
-                                    <i class="fas fa-chart-bar"></i>
-                                    View Dashboard
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 3 -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/hospital-management.png" alt="Hospital Management System" loading="lazy">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Hospital Management Analysis</h3>
-                            <p class="project-description">A SQL-based analysis of a hospital management dataset (2023) to uncover insights into doctor performance, patient billing, and operational efficiency with actionable recommendations for hospital administrators.</p>
-                            <div class="project-tech">
-                                <span class="tech-pill">MySQL</span>
-                                <span class="tech-pill">Tableau</span>
-                                <span class="tech-pill">Data Modeling</span>
-                                <span class="tech-pill">EDA</span>
-                            </div>
-                            <div class="project-buttons">
-                                <a href="https://github.com/Viktor-Kukhar/hospital-management-analysis" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    View on GitHub
-                                </a>
-                                <a href="https://public.tableau.com/app/profile/viktor.kukhar/viz/HospitalManagement_17528395711840/Dashboard" target="_blank" rel="noopener noreferrer" class="project-link dashboard-link">
-                                    <i class="fas fa-chart-bar"></i>
-                                    View Dashboard
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 4 -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/online-retail.png" alt="Online Retail Analytics" loading="lazy">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Online Retail Analysis</h3>
-                            <p class="project-description">A SQL-based analysis of an online retail dataset (2010-2011) to uncover insights into customer purchasing behavior, sales trends, and product performance with data-driven recommendations for retail optimization.</p>
-                            <div class="project-tech">
-                                <span class="tech-pill">MySQL</span>
-                                <span class="tech-pill">Tableau</span>
-                                <span class="tech-pill">Data Cleaning</span>
-                                <span class="tech-pill">EDA</span>
-                            </div>
-                            <div class="project-buttons">
-                                <a href="https://github.com/Viktor-Kukhar/online-retail-analysis" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    View on GitHub
-                                </a>
-                                <a href="https://public.tableau.com/app/profile/viktor.kukhar/viz/Retail_17531934111190/Dashboard" target="_blank" rel="noopener noreferrer" class="project-link dashboard-link">
-                                    <i class="fas fa-chart-bar"></i>
-                                    View Dashboard
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex items-center justify-center md:justify-start gap-4 pt-2">
+              <a class="inline-flex h-12 w-12 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-600 transition hover:text-accent hover:border-accent hover:bg-accent/5" href="https://www.linkedin.com/in/kukhar-viktor/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in text-lg"></i>
+              </a>
+              <a class="inline-flex h-12 w-12 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-600 transition hover:text-accent hover:border-accent hover:bg-accent/5" href="https://github.com/Viktor-Kukhar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fab fa-github text-lg"></i>
+              </a>
+              <a class="inline-flex h-12 w-12 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-600 transition hover:text-accent hover:border-accent hover:bg-accent/5" href="mailto:viktor.kukhar1708@gmail.com" aria-label="Email">
+                <i class="fa-regular fa-envelope text-lg"></i>
+              </a>
             </div>
-        </section>
-    </main>
+          </div>
+        </div>
 
-    <!-- Scripts -->
-    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script defer src="main.js"></script>
+        <!-- Accent rule -->
+        <div class="mt-14 h-px w-full bg-gradient-to-r from-transparent via-accent/40 to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="relative">
+              <div class="mx-auto max-w-6xl px-6 pb-4">
+        <h2 class="mb-10 text-center text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">Featured Projects</h2>
+
+        <div class="grid gap-10">
+          <!-- Project: AI Impact Analysis -->
+          <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-subtle">
+            <div class="w-full">
+              <div class="tableau-embed" data-tableau-url="https://public.tableau.com/views/AIImpactAnalysis/Dashboard?:showVizHome=no&:embed=y" data-height="800px" data-min-height="800"></div>
+            </div>
+            <div class="border-t border-slate-300"></div>
+            <div class="p-5 md:p-6">
+              <h3 class="text-xl font-semibold text-slate-900">AI Impact Analysis on Digital Media</h3>
+              <p class="mt-2 text-slate-600">A SQL-based analysis of AI adoption, job loss, and content volume trends across industries and countries (2020-2025) to examine the impact of artificial intelligence on digital media landscape and workforce dynamics.</p>
+              <div class="mt-4">
+                <a class="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-6 py-3 text-base font-medium text-slate-700 transition hover:border-accent hover:text-accent hover:bg-accent/5 hover:shadow-sm" href="https://github.com/Viktor-Kukhar/ai-impact-analysis" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>View on GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project: Cybersecurity Threats Analysis -->
+          <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-subtle">
+            <div class="w-full">
+              <div class="tableau-embed" data-tableau-url="https://public.tableau.com/views/Cybersecurity_17538803089120/Dashboard?:showVizHome=no&:embed=y" data-height="800px" data-min-height="800"></div>
+            </div>
+            <div class="border-t border-slate-300"></div>
+            <div class="p-5 md:p-6">
+              <h3 class="text-xl font-semibold text-slate-900">Cybersecurity Threats Analysis</h3>
+              <p class="mt-2 text-slate-600">A SQL-based analysis of a global cybersecurity dataset (2015–2024) to uncover insights into attack trends, financial losses, and threat actor behaviors with recommendations for security professionals.</p>
+              <div class="mt-4">
+                <a class="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-6 py-3 text-base font-medium text-slate-700 transition hover:border-accent hover:text-accent hover:bg-accent/5 hover:shadow-sm" href="https://github.com/Viktor-Kukhar/cybersecurity-threats-analysis" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>View on GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project: Hospital Management Analysis -->
+          <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-subtle">
+            <div class="w-full">
+              <div class="tableau-embed" data-tableau-url="https://public.tableau.com/views/HospitalManagement_17528395711840/Dashboard?:showVizHome=no&:embed=y" data-height="800px" data-min-height="800"></div>
+            </div>
+            <div class="border-t border-slate-300"></div>
+            <div class="p-5 md:p-6">
+              <h3 class="text-xl font-semibold text-slate-900">Hospital Management Analysis</h3>
+              <p class="mt-2 text-slate-600">A SQL-based analysis of a hospital management dataset (2023) to uncover insights into doctor performance, patient billing, and operational efficiency with actionable recommendations for hospital administrators.</p>
+              <div class="mt-4">
+                <a class="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-6 py-3 text-base font-medium text-slate-700 transition hover:border-accent hover:text-accent hover:bg-accent/5 hover:shadow-sm" href="https://github.com/Viktor-Kukhar/hospital-management-analysis" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>View on GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project: Online Retail Analysis -->
+          <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-subtle">
+            <div class="w-full">
+              <div class="tableau-embed" data-tableau-url="https://public.tableau.com/views/Retail_17531934111190/Dashboard?:showVizHome=no&:embed=y" data-height="800px" data-min-height="800"></div>
+            </div>
+            <div class="border-t border-slate-300"></div>
+            <div class="p-5 md:p-6">
+              <h3 class="text-xl font-semibold text-slate-900">Online Retail Analysis</h3>
+              <p class="mt-2 text-slate-600">A SQL-based analysis of an online retail dataset (2010-2011) to uncover insights into customer purchasing behavior, sales trends, and product performance with data-driven recommendations for retail optimization.</p>
+              <div class="mt-4">
+                <a class="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-6 py-3 text-base font-medium text-slate-700 transition hover:border-accent hover:text-accent hover:bg-accent/5 hover:shadow-sm" href="https://github.com/Viktor-Kukhar/online-retail-analysis" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>View on GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white/60 backdrop-blur">
+          <div class="mx-auto max-w-6xl px-6 py-16 text-center">
+      <p class="text-slate-600">© Viktor Kukhar <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script defer src="main.js"></script>
 </body>
 </html>
